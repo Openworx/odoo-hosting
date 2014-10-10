@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_website_form_piwik" model="ir.ui.view">
+            <field name="name">website.form.piwik</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form"/>
+            <field name="arch" type="xml">
+                <field name="google_analytics_key" position="after">
+                    <field name="piwik_url"/>
+                    <field name="piwik_site_id"/>
+                    <field name="piwik_track_backend"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

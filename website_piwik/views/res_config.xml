@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_website_config_settings_piwik" model="ir.ui.view">
+            <field name="name">Website settings piwik</field>
+            <field name="model">website.config.settings</field>
+            <field name="inherit_id" ref="website.view_website_config_settings"/>
+            <field name="arch" type="xml">
+                <div name="google_analytics_key" position="after">
+                    <label for="piwik_url"/>
+                    <div name="piwik_url">
+                        <div>
+                            <div name="piwik_url" class="oe_inline">
+                                <field name="piwik_url"/>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="piwik_site_id"/>
+                    <div name="piwik_site_id">
+                        <div>
+                            <div name="piwik_site_id" class="oe_inline">
+                                <field name="piwik_site_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="piwik_track_backend"/>
+                    <div name="piwik_track_backend">
+                        <div>
+                            <div name="piwik_track_backend" class="oe_inline">
+                                <field name="piwik_track_backend"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</openerp>

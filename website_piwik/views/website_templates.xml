@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+<template id="layout" inherit_id="website.layout" name="Main layout">
+    <xpath expr="//head" position="inside">
+        <t t-if="website and website.piwik_url and website.piwik_site_id">
+            <script type="text/javascript">
+                var _paq = _paq || [];
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+                (function() {
+                var u="//<t t-esc="website.piwik_url"/>/";
+                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                _paq.push(['setSiteId', <t t-esc="website.piwik_site_id"/>]);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                })();
+            </script>
+        </t>
+    </xpath>
+</template>
+
+<template id="assets_backend" name="web_analytics_piwik assets" inherit_id="web.assets_backend">
+    <xpath expr="." position="inside">
+        <t t-if="piwik_url and piwik_site_id and piwik_track_backend">
+            <script type="text/javascript">
+                var _paq = _paq || [];
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+                (function() {
+                var u="//<t t-esc="piwik_url"/>/";
+                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                _paq.push(['setSiteId', <t t-esc="piwik_site_id"/>]);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+                })();
+            </script>
+        </t>
+    </xpath>
+</template>
+
+     </data>
+</openerp>
+
